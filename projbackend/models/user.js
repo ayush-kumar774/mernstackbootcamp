@@ -13,7 +13,25 @@ var userSchema = new mongoose.Schema(
                         required: false,
                         maxlength: 32,
                         trim: true
-                }
+                },
+                email: {
+                        type: String,
+                        required: true,
+                        trim: true,
+                        unique: true
+                },
+
+                //TODO: password
+
+                password: {
+                        type: String,
+                        trim: true
+                },
+                
+                salt: String,
+
+                
+
 
         }
 );
