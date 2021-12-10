@@ -22,12 +22,10 @@ var userSchema = new mongoose.Schema(
                         trim: true,
                         unique: true
                 },
-
                 userinfo: {
                         type: String,
                         required: true
                 },
-
                 encry_password: {
                         type: String,
                         trim: true
@@ -39,16 +37,12 @@ var userSchema = new mongoose.Schema(
                         type: Number,
                         default: 0
                 },
-
                 purchases : {
                         type: Array,
                         default : []
                 }
-
-                
-
-
-        }
+        },
+        {timestamps: true}
 );
 
 userSchema.virtual("password")
