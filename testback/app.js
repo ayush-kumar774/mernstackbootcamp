@@ -9,6 +9,23 @@ app.get("/" , (req, res) => {
         }
 );
 
+const admin = (req, res) => {
+        return res.send("This is admin dashboard");
+};
+
+const isAdmin = (req, res, next) => {
+        console.log("isAdmin is running");
+        next();
+};
+
+const isLoggedIn = (req, res, next) => {
+        console.log("is logged in");
+        next();
+};
+
+app.get("/admin" , isLoggedIn , isAdmin , admin);
+
+
 app.get("/login" , (req, res) => {
         return res.send("You are visiting login route");
         }
