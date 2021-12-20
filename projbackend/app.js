@@ -1,9 +1,15 @@
+require("dotenv").config();
+
 const mongoose = require('mongoose');
 const express = require('express');
 const app = express() ;
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const cors = require('cors');
 
 
-mongoose.connect('mongodb://localhost:27017/tshirt', 
+mongoose
+        .connect ( process.env.DATABASE, 
         {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
@@ -15,7 +21,9 @@ mongoose.connect('mongodb://localhost:27017/tshirt',
                 }
         );
 
-const port = 8000;
+    
+
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
         console.log(`app is running at ${port}`);
