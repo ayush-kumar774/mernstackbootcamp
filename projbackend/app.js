@@ -22,6 +22,11 @@ mongoose
         );
 
     
+app.use(bodyParser.json());
+
+app.use(cookieParser());
+
+app.use(cors());
 
 const port = process.env.PORT || 8000;
 
