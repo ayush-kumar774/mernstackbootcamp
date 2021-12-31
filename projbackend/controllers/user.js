@@ -25,14 +25,5 @@ exports.getUser = (req, res) => {
 };
 
 
-exports.getAllUsers = (req, res) => {
-        User.find().exec( (err, users) => {
-                if (err || !users) {
-                        return res.status(400).json({
-                                error: "No users found"
-                        })
-                }
-                res.json(users);
-        } )
-}
+
 
