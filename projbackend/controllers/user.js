@@ -24,6 +24,7 @@ exports.getUser = (req, res) => {
         return res.json(req.profile);
 };
 
+
 exports.getAllUsers = (req, res) => {
         User.find().exec( (err, users) => {
                 if (err || !users) {
@@ -34,3 +35,4 @@ exports.getAllUsers = (req, res) => {
                 res.json(users);
         } )
 }
+
